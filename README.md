@@ -1,10 +1,16 @@
 # ZYX - Sistema de Controle de Pátio, Inbound, Expedição e Estoque
 
+Este projeto foi desenvolvido como parte do teste técnico para a vaga de Analista de Sistemas Operacionais.
+
+O objetivo principal foi demonstrar a capacidade de construir uma aplicação web completa, com integração entre frontend e backend, seguindo uma estrutura organizada, clara e funcional. Durante o desenvolvimento, houve preocupação com a organização do código, separação de responsabilidades e funcionamento geral da aplicação..
+
+A funcionalidade de autenticação (como tela de login e controle de acesso) não foi implementada, pois não fazia parte do foco principal da avaliação. A proposta deste teste é priorizar a entrega de uma solução funcional, bem estruturada e de fácil entendimento, evidenciando a capacidade de desenvolvimento e organização do projeto.
+
 ## Visão geral
 
 Este projeto é uma aplicação web para controle operacional de veículos no pátio, recebimento de cargas, expedição de saídas, cadastro de itens, acompanhamento de estoque e auditoria de ações.
 
-A aplicação foi adaptada para trabalhar com **MySQL** e hoje utiliza uma arquitetura com:
+A aplicação foi construida para trabalhar com **MySQL** e hoje utiliza uma arquitetura com:
 
 - **Frontend** em React + Vite + TypeScript
 - **Backend** em Express + TypeScript
