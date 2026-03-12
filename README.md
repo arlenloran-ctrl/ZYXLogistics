@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como parte do teste técnico para a vaga de Analista de Sistemas Operacionais.
 
-O objetivo principal foi demonstrar a capacidade de construir uma aplicação web completa, com integração entre frontend e backend, seguindo uma estrutura organizada, clara e funcional. Durante o desenvolvimento, houve preocupação com a organização do código, separação de responsabilidades e funcionamento geral da aplicação..
+O objetivo principal foi demonstrar a capacidade de construir uma aplicação web completa, com integração entre frontend e backend, seguindo uma estrutura organizada, clara e funcional. Durant o desenvolvimento, houve preocupação com a organização do código, separação de responsabilidades e funcionamento geral da aplicação..
 
 A funcionalidade de autenticação (como tela de login e controle de acesso) não foi implementada, pois não fazia parte do foco principal da avaliação. A proposta deste teste é priorizar a entrega de uma solução funcional, bem estruturada e de fácil entendimento, evidenciando a capacidade de desenvolvimento e organização do projeto.
 
@@ -10,7 +10,7 @@ A funcionalidade de autenticação (como tela de login e controle de acesso) nã
 
 Este projeto é uma aplicação web para controle operacional de veículos no pátio, recebimento de cargas, expedição de saídas, cadastro de itens, acompanhamento de estoque e auditoria de ações.
 
-A aplicação foi construida para trabalhar com **MySQL** e hoje utiliza uma arquitetura com:
+A aplicação foi construida para trabalhar com **MySQL** utilizando uma arquitetura com:
 
 - **Frontend** em React + Vite + TypeScript
 - **Backend** em Express + TypeScript
@@ -97,6 +97,7 @@ O objetivo do projeto é centralizar a operação do pátio em uma única aplica
 │   ├── index.css
 │   ├── main.tsx
 │   └── types.ts
+├── server.js
 ├── server.ts
 ├── package.json
 ├── tsconfig.json
@@ -107,6 +108,9 @@ O objetivo do projeto é centralizar a operação do pátio em uma única aplica
 ---
 
 ## Responsabilidade de cada parte
+
+### `server.js`
+Arquivo utilizado apenas para iniciar o `server.ts`, devido a limitações de algumas plataformas de hospedagem que realizam a leitura inicial apenas de arquivos `.js`.
 
 ### `server.ts`
 Arquivo de bootstrap da aplicação.
@@ -149,7 +153,7 @@ Concentra regras que são reutilizadas por mais de uma rota.
 ### `src/dataClient.ts`
 Camada de integração do frontend com a API.
 
-Apesar de manter algumas funções compatíveis com o estilo antigo do projeto, atualmente ela trabalha como ponte entre a interface e os endpoints REST do backend.
+Trabalha como ponte entre a interface e os endpoints REST do backend.
 
 ### `src/App.tsx`
 Concentra a interface principal do sistema.
@@ -249,7 +253,7 @@ Campos principais:
 
 ### Fluxo de entrada carregada
 1. O veículo é salvo em `trucks`
-2. Os itens informados na Portaria são salvos em `truck_items`
+2. Os itens dos veículos que chegam carregados informados na Portaria são salvos em `truck_items`
 3. O Inbound consulta esse vínculo para saber o que será recebido
 4. Ao receber, o sistema grava em `inbound`
 5. O saldo é refletido em `inventory`
@@ -280,7 +284,7 @@ Campos principais:
 - influencia os indicadores operacionais do dashboard
 
 ### Dashboard
-Os cards e indicadores usam dados reais do banco.
+Os cards e indicadores usam os dados atualizados.
 
 #### Atividade Recente
 Lê os dados da tabela `audit_logs`.
@@ -342,12 +346,12 @@ Copie o arquivo `.env.example` para `.env`.
 Exemplo:
 
 ```env
-PORT=3000
-DB_HOST=srv1844.hstgr.io
-DB_PORT=3306
-DB_NAME=u437845973_zyx
-DB_USER=u437845973_zyx
-DB_PASSWORD=senhateste1
+PORT=port
+DB_HOST=dbhost
+DB_PORT=dbport
+DB_NAME=dbname
+DB_USER=dbuser
+DB_PASSWORD=dbpassrowd
 MYSQL_SSL=false
 ```
 
@@ -370,7 +374,7 @@ MYSQL_SSL=false
 - Node.js 20 ou superior
 - npm 10 ou superior
 - acesso ao servidor MySQL
-- IP liberado no **Remote MySQL** da Hostinger, caso o banco esteja hospedado lá
+- IP liberado no **Remote MySQL** da Hostinger, caso o banco esteja hospedado lá (Como no caso)
 
 ---
 
